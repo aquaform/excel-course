@@ -11,8 +11,7 @@
     font-size: 18px;
   }
 
-  &:active,
-  &.active {
+  &:active, &.active {
     color: $color;
   }
 
@@ -21,6 +20,7 @@
     cursor: pointer;
   }
 }
+
 
 @mixin clear-list() {
   list-style: none;
