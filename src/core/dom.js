@@ -39,9 +39,32 @@ class Dom {
 
     return this
   }
+
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
+
+  getCoords() {
+    return this.$el.getBoundingClientRect()
+  }
+
+  get data() {
+    return this.$el.dataset
+  }
+
+  findAll(selector) {
+    const allElements = []
+    this.$el.querySelectorAll(selector).forEach(el => {
+      allElements.push($(el))
+    })
+    return allElements
+  }
+
+  css(styles = {}) {
+    Object.keys(styles).forEach(key => this.$el.style[key] = styles[key])
+  }
 }
 
-// event.target
 export function $(selector) {
   return new Dom(selector)
 }
